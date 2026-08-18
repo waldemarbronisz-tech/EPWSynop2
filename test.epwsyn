@@ -1,0 +1,57 @@
+{
+  "project_id": "test-123",
+  "format_version": 1,
+  "created_with": "EPW Synoptic Editor",
+  "modified_at": "",
+  "metadata": {},
+  "pages": [
+    {
+      "id": "ec8fab70-097a-4eb0-909a-4b33f2a03a9b",
+      "name": "TestPage",
+      "description": "",
+      "background": "#ffffff",
+      "width": 1920.0,
+      "height": 1080.0,
+      "grid_enabled": true,
+      "grid_size": 10.0,
+      "startup_page": false,
+      "visibility": true,
+      "objects": [
+        {
+          "type_id": "test.type",
+          "id": "f553a223-28ee-44cc-8ab5-8177578a17ed",
+          "designation": "",
+          "name": "TestObj",
+          "description": "",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 50.0,
+          "height": 50.0,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": false,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [],
+          "bindings": {},
+          "states": [
+            "UNKNOWN"
+          ],
+          "commands": [],
+          "metadata": {}
+        }
+      ],
+      "connections": []
+    }
+  ]
+}

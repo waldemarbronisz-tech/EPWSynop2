@@ -1,0 +1,879 @@
+{
+  "project_id": "ENTRY_GATE_DEMO",
+  "format_version": 1,
+  "created_with": "EPW Synoptic Editor",
+  "modified_at": "",
+  "metadata": {
+    "description": "Demonstration Project"
+  },
+  "pages": [
+    {
+      "id": "23fc416f-5c75-423c-9a29-51ae80a41ab7",
+      "name": "MAIN",
+      "description": "",
+      "background": "#ffffff",
+      "width": 1920.0,
+      "height": 1080.0,
+      "grid_enabled": true,
+      "grid_size": 10.0,
+      "startup_page": false,
+      "visibility": true,
+      "objects": [],
+      "connections": []
+    },
+    {
+      "id": "f2ddc201-8236-4a2a-bb4d-6807320e716d",
+      "name": "POWER",
+      "description": "",
+      "background": "#ffffff",
+      "width": 1920.0,
+      "height": 1080.0,
+      "grid_enabled": true,
+      "grid_size": 10.0,
+      "startup_page": false,
+      "visibility": true,
+      "objects": [
+        {
+          "type_id": "electrical.grid",
+          "id": "8afdcf92-dd08-4903-9e98-7db300be9e12",
+          "designation": "GRID",
+          "name": "",
+          "description": "",
+          "x": 100,
+          "y": 150,
+          "width": 60,
+          "height": 60,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "OUT",
+              "x": 0.5,
+              "y": 1.0,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "out",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "OK",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [],
+          "metadata": {}
+        },
+        {
+          "type_id": "electrical.circuit_breaker",
+          "id": "b02ec368-2356-4b2d-a14c-d4c4ff7aa3ca",
+          "designation": "Q1",
+          "name": "",
+          "description": "",
+          "x": 100,
+          "y": 0.0,
+          "width": 40,
+          "height": 80,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "LINE",
+              "x": 0.5,
+              "y": 0.0,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            },
+            {
+              "id": "LOAD",
+              "x": 0.5,
+              "y": 1.0,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {
+            "position": "EG.Q1.POSITION"
+          },
+          "states": [
+            "OPEN",
+            "CLOSED",
+            "TRIPPED",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [
+            "OPEN",
+            "CLOSE"
+          ],
+          "metadata": {}
+        },
+        {
+          "type_id": "electrical.busbar",
+          "id": "43aa7497-0d52-4f71-910a-aa88b913b44c",
+          "designation": "BB1",
+          "name": "400 V",
+          "description": "",
+          "x": 50,
+          "y": 300,
+          "width": 400,
+          "height": 10,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {
+            "voltage": "400V",
+            "orientation": "horizontal"
+          },
+          "ports": [
+            {
+              "id": "MAIN",
+              "x": 0.5,
+              "y": 0.5,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "DEENERGIZED",
+            "ENERGIZED",
+            "FAULT"
+          ],
+          "commands": [],
+          "metadata": {}
+        },
+        {
+          "type_id": "electrical.circuit_breaker",
+          "id": "88c49546-e39a-4a8e-b322-24c5269f86f7",
+          "designation": "Q2",
+          "name": "",
+          "description": "",
+          "x": 100,
+          "y": 400,
+          "width": 40,
+          "height": 80,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "LINE",
+              "x": 0.5,
+              "y": 0.0,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            },
+            {
+              "id": "LOAD",
+              "x": 0.5,
+              "y": 1.0,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "OPEN",
+            "CLOSED",
+            "TRIPPED",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [
+            "OPEN",
+            "CLOSE"
+          ],
+          "metadata": {}
+        },
+        {
+          "type_id": "electrical.circuit_breaker",
+          "id": "5acb725b-457f-493f-811e-972404a0ab7f",
+          "designation": "Q3",
+          "name": "",
+          "description": "",
+          "x": 200,
+          "y": 400,
+          "width": 40,
+          "height": 80,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "LINE",
+              "x": 0.5,
+              "y": 0.0,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            },
+            {
+              "id": "LOAD",
+              "x": 0.5,
+              "y": 1.0,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "OPEN",
+            "CLOSED",
+            "TRIPPED",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [
+            "OPEN",
+            "CLOSE"
+          ],
+          "metadata": {}
+        },
+        {
+          "type_id": "electrical.circuit_breaker",
+          "id": "8e161f78-8b40-4733-89cd-36b98029d809",
+          "designation": "Q4",
+          "name": "",
+          "description": "",
+          "x": 300,
+          "y": 400,
+          "width": 40,
+          "height": 80,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "LINE",
+              "x": 0.5,
+              "y": 0.0,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            },
+            {
+              "id": "LOAD",
+              "x": 0.5,
+              "y": 1.0,
+              "domain": "electrical",
+              "medium": "ac",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "OPEN",
+            "CLOSED",
+            "TRIPPED",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [
+            "OPEN",
+            "CLOSE"
+          ],
+          "metadata": {}
+        }
+      ],
+      "connections": [
+        {
+          "id": "c1",
+          "fromObjectId": "8afdcf92-dd08-4903-9e98-7db300be9e12",
+          "fromPort": "OUT",
+          "toObjectId": "b02ec368-2356-4b2d-a14c-d4c4ff7aa3ca",
+          "toPort": "LINE",
+          "domain": "electrical",
+          "medium": "ac",
+          "route": "auto",
+          "waypoints": [],
+          "style": {},
+          "state": "UNKNOWN",
+          "flowDirection": "none",
+          "bindings": {}
+        },
+        {
+          "id": "c2",
+          "fromObjectId": "b02ec368-2356-4b2d-a14c-d4c4ff7aa3ca",
+          "fromPort": "LOAD",
+          "toObjectId": "43aa7497-0d52-4f71-910a-aa88b913b44c",
+          "toPort": "MAIN",
+          "domain": "electrical",
+          "medium": "ac",
+          "route": "auto",
+          "waypoints": [],
+          "style": {},
+          "state": "UNKNOWN",
+          "flowDirection": "none",
+          "bindings": {}
+        }
+      ]
+    },
+    {
+      "id": "e96c355f-e460-4c53-a200-80bed650b573",
+      "name": "WATER",
+      "description": "",
+      "background": "#ffffff",
+      "width": 1920.0,
+      "height": 1080.0,
+      "grid_enabled": true,
+      "grid_size": 10.0,
+      "startup_page": false,
+      "visibility": true,
+      "objects": [
+        {
+          "type_id": "water.source",
+          "id": "6d5a5c22-b879-43c3-9717-dc2ad11d7dc0",
+          "designation": "",
+          "name": "",
+          "description": "",
+          "x": 100,
+          "y": 100,
+          "width": 50,
+          "height": 50,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "OUT",
+              "x": 1.0,
+              "y": 0.5,
+              "domain": "water",
+              "medium": "water",
+              "direction": "out",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "OK",
+            "UNKNOWN"
+          ],
+          "commands": [],
+          "metadata": {}
+        },
+        {
+          "type_id": "water.valve",
+          "id": "21a14231-9c15-491a-95e3-c978ed899d02",
+          "designation": "V1",
+          "name": "",
+          "description": "",
+          "x": 200,
+          "y": 100,
+          "width": 40,
+          "height": 40,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "IN",
+              "x": 0.0,
+              "y": 0.5,
+              "domain": "water",
+              "medium": "water",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            },
+            {
+              "id": "OUT",
+              "x": 1.0,
+              "y": 0.5,
+              "domain": "water",
+              "medium": "water",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "OPEN",
+            "CLOSED",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [
+            "OPEN",
+            "CLOSE"
+          ],
+          "metadata": {}
+        },
+        {
+          "type_id": "water.pump",
+          "id": "330e9626-c66f-476f-a737-374cb53b81bf",
+          "designation": "P1",
+          "name": "",
+          "description": "",
+          "x": 300,
+          "y": 100,
+          "width": 60,
+          "height": 60,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "IN",
+              "x": 0.0,
+              "y": 0.5,
+              "domain": "water",
+              "medium": "water",
+              "direction": "in",
+              "label": "",
+              "connection_rules": {}
+            },
+            {
+              "id": "OUT",
+              "x": 1.0,
+              "y": 0.5,
+              "domain": "water",
+              "medium": "water",
+              "direction": "out",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "STOPPED",
+            "RUNNING",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [
+            "START",
+            "STOP"
+          ],
+          "metadata": {}
+        }
+      ],
+      "connections": []
+    },
+    {
+      "id": "52987014-4e68-4182-8659-5fa0cfe3359e",
+      "name": "HVAC",
+      "description": "",
+      "background": "#ffffff",
+      "width": 1920.0,
+      "height": 1080.0,
+      "grid_enabled": true,
+      "grid_size": 10.0,
+      "startup_page": false,
+      "visibility": true,
+      "objects": [
+        {
+          "type_id": "hvac.fan",
+          "id": "e9a7a632-1823-4c12-b222-d072865fb1c1",
+          "designation": "FAN1",
+          "name": "",
+          "description": "",
+          "x": 100,
+          "y": 100,
+          "width": 60,
+          "height": 60,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "IN",
+              "x": 0.0,
+              "y": 0.5,
+              "domain": "hvac",
+              "medium": "air",
+              "direction": "in",
+              "label": "",
+              "connection_rules": {}
+            },
+            {
+              "id": "OUT",
+              "x": 1.0,
+              "y": 0.5,
+              "domain": "hvac",
+              "medium": "air",
+              "direction": "out",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "STOPPED",
+            "RUNNING",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [
+            "START",
+            "STOP"
+          ],
+          "metadata": {}
+        },
+        {
+          "type_id": "hvac.damper",
+          "id": "01784767-0405-4519-9f3c-8ada62a573dd",
+          "designation": "DAMP1",
+          "name": "",
+          "description": "",
+          "x": 200,
+          "y": 100,
+          "width": 40,
+          "height": 40,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [
+            {
+              "id": "IN",
+              "x": 0.0,
+              "y": 0.5,
+              "domain": "hvac",
+              "medium": "air",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            },
+            {
+              "id": "OUT",
+              "x": 1.0,
+              "y": 0.5,
+              "domain": "hvac",
+              "medium": "air",
+              "direction": "bidirectional",
+              "label": "",
+              "connection_rules": {}
+            }
+          ],
+          "bindings": {},
+          "states": [
+            "OPEN",
+            "CLOSED",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [
+            "OPEN",
+            "CLOSE"
+          ],
+          "metadata": {}
+        }
+      ],
+      "connections": []
+    },
+    {
+      "id": "a22195db-f3fc-4e5f-9d06-0fb8d00f3aff",
+      "name": "AUTOMATION",
+      "description": "",
+      "background": "#ffffff",
+      "width": 1920.0,
+      "height": 1080.0,
+      "grid_enabled": true,
+      "grid_size": 10.0,
+      "startup_page": false,
+      "visibility": true,
+      "objects": [
+        {
+          "type_id": "automation.indicator",
+          "id": "ba54f5d9-32dd-40d6-8bae-5d1353771526",
+          "designation": "SYS_OK",
+          "name": "",
+          "description": "",
+          "x": 100,
+          "y": 100,
+          "width": 30,
+          "height": 30,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {},
+          "ports": [],
+          "bindings": {},
+          "states": [
+            "ON",
+            "OFF",
+            "FAULT",
+            "UNKNOWN"
+          ],
+          "commands": [],
+          "metadata": {}
+        }
+      ],
+      "connections": []
+    },
+    {
+      "id": "0c55f392-0112-43b3-a98c-21b892687d34",
+      "name": "ENERGY",
+      "description": "",
+      "background": "#ffffff",
+      "width": 1920.0,
+      "height": 1080.0,
+      "grid_enabled": true,
+      "grid_size": 10.0,
+      "startup_page": false,
+      "visibility": true,
+      "objects": [
+        {
+          "type_id": "automation.measurement",
+          "id": "ae3285ce-b8b6-4615-8fd1-eebe5fc10081",
+          "designation": "UL1",
+          "name": "",
+          "description": "",
+          "x": 100,
+          "y": 100,
+          "width": 100,
+          "height": 30,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {
+            "unit": "V",
+            "decimals": 1,
+            "alarm_low": 0.0,
+            "alarm_high": 100.0
+          },
+          "ports": [],
+          "bindings": {
+            "value": "EPM01.UL1"
+          },
+          "states": [
+            "NORMAL",
+            "ALARM_LOW",
+            "ALARM_HIGH",
+            "UNKNOWN"
+          ],
+          "commands": [],
+          "metadata": {}
+        },
+        {
+          "type_id": "automation.measurement",
+          "id": "66c64b69-36c1-46c4-b062-353e544070da",
+          "designation": "IL1",
+          "name": "",
+          "description": "",
+          "x": 100,
+          "y": 150,
+          "width": 100,
+          "height": 30,
+          "rotation": 0.0,
+          "z_order": 0,
+          "visible": true,
+          "locked": false,
+          "label_settings": {
+            "showDesignation": true,
+            "showName": true,
+            "position": "BOTTOM",
+            "offsetX": 0.0,
+            "offsetY": 0.0,
+            "fontSize": 10,
+            "alignment": "center",
+            "wrapping": true
+          },
+          "properties": {
+            "unit": "A",
+            "decimals": 1,
+            "alarm_low": 0.0,
+            "alarm_high": 100.0
+          },
+          "ports": [],
+          "bindings": {
+            "value": "EPM01.IL1"
+          },
+          "states": [
+            "NORMAL",
+            "ALARM_LOW",
+            "ALARM_HIGH",
+            "UNKNOWN"
+          ],
+          "commands": [],
+          "metadata": {}
+        }
+      ],
+      "connections": []
+    }
+  ]
+}
