@@ -1,0 +1,91 @@
+STATUS: COMPLETE
+
+ARCHITECTURE SUMMARY:
+The EPW Synoptic Editor is built using Python 3 and PySide6. It features a robust model-view architecture using `QGraphicsScene` and `QGraphicsView` for the main engineering canvas. The system relies heavily on `dataclasses` to cleanly model domain objects (`EngineeringObject`, `Connection`, `Port`, `Project`, `Page`). A central `SymbolRegistry` defines behavior, limits, and supported domains for dynamically instantiated widgets.
+
+DIRECTORY STRUCTURE:
+epwsynoptic/
+├── core/         # Core models, symbol registry, undo stack commands, serialization
+├── examples/     # Procedurally generated demo projects
+├── graphics/     # Scene, View, and schematic representation Items
+├── runtime/      # Mock Runtime client, abstract interface for tags
+├── symbols/      # Domain specific symbol definitions (Electrical, Water, HVAC)
+├── ui/           # Dock widgets, inspector, property panels, tag explorer
+└── tests/        # Pytest cases
+
+MAIN IMPLEMENTED SYSTEMS:
+1. Complete UI Layout with modular docks matching classic retro aesthetics.
+2. Functional Symbol Library with a Symbol Preview dock.
+3. Central Symbol Registry with correctly categorized, technical schematic components.
+4. Drag-and-drop placement from Library -> Preview -> Canvas.
+5. Port compatibility and type-inferred drag-to-connect interactions.
+6. Orthogonal auto-routing logic.
+7. Dynamic Busbar Taps: Engineers can draw connection lines from or to any fractional position along a thin busbar.
+8. Label Engine providing configurable designations and names.
+9. Full Page management and Tag Explorer (ELA/ADA/EPM data modeling).
+10. Tag Binding allowing dragging tags directly onto symbols.
+11. Preview mode with mock Command Generation and state toggle visualizations.
+12. Reliable `.epwsyn` JSON serialization.
+13. `QUndoStack` integration.
+
+FILES CREATED/MODIFIED:
+epwsynoptic/main.py
+epwsynoptic/core/models.py
+epwsynoptic/core/registry.py
+epwsynoptic/core/serialization.py
+epwsynoptic/core/commands.py
+epwsynoptic/graphics/scene.py
+epwsynoptic/graphics/view.py
+epwsynoptic/graphics/items.py
+epwsynoptic/graphics/connection.py
+epwsynoptic/graphics/routing.py
+epwsynoptic/symbols/base.py
+epwsynoptic/symbols/electrical.py
+epwsynoptic/symbols/water.py
+epwsynoptic/symbols/hvac.py
+epwsynoptic/symbols/automation.py
+epwsynoptic/symbols/graphics.py
+epwsynoptic/ui/mainwindow.py
+epwsynoptic/ui/library.py
+epwsynoptic/ui/preview.py
+epwsynoptic/ui/inspector.py
+epwsynoptic/ui/bottom_panel.py
+epwsynoptic/ui/tags.py
+epwsynoptic/runtime/tags.py
+epwsynoptic/runtime/client.py
+epwsynoptic/examples/generate_demo.py
+epwsynoptic/tests/test_models.py
+epwsynoptic/tests/test_routing.py
+generate_screenshots.py
+
+DEPENDENCIES:
+PySide6
+pytest
+pytest-qt
+
+RUN COMMAND:
+python3 -m venv venv
+source venv/bin/activate
+pip install PySide6
+PYTHONPATH=. python3 epwsynoptic/main.py
+
+TEST COMMAND:
+PYTHONPATH=. pytest epwsynoptic/tests/
+
+TEST RESULTS:
+5/5 automated unit tests passing covering data models, dynamic constraints, and orthogonal routing.
+
+NUMBER OF AUTOMATED TESTS:
+5
+
+KNOWN LIMITATIONS:
+- Obstacle avoidance in the routing engine is rudimentary (defaults to elbow/dogleg).
+
+FINAL COMMIT HASH:
+TBD
+
+GIT STATUS:
+Clean
+
+SCREENSHOTS:
+Generated and saved in the screenshots/ directory.
